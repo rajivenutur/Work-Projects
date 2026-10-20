@@ -8,6 +8,8 @@ def subtract(a, b):
 
 def multiply(a, b):
     return a * b
+def power(a,b):
+    return a ** b
 
 def divide(a, b):
     if b == 0:
@@ -15,7 +17,7 @@ def divide(a, b):
     return a / b
 
 print("Simple Calculator")
-print("Operations: +, -, *, /")
+print("Operations: +, -, *, ** /")
 
 while True:
     choice = input("\nEnter operation (or 'q' to quit): ").strip()
@@ -24,8 +26,8 @@ while True:
         print("Goodbye!")
         break
 
-    if choice not in ("+", "-", "*", "/"):
-        print("Invalid operation. Please choose +, -, *, or /.")
+    if choice not in ("+", "-", "*", "/", "**"):
+        print("Invalid operation. Please choose +, -, *, **, or /.")
         continue
 
     try:
@@ -41,6 +43,8 @@ while True:
         result = subtract(a, b)
     elif choice == "*":
         result = multiply(a, b)
+    elif choice == "**":
+        result = power(a,b)
     else:
         result = divide(a, b)
 
